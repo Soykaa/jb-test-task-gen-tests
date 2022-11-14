@@ -1,10 +1,11 @@
 package org.jetbrains.car;
 
 import org.jetbrains.location.Location;
+import org.jetbrains.util.Constants;
 
 public class PetrolCar extends Car {
-    public PetrolCar(Location location, double energyUsageRate) {
+    public PetrolCar(Location location, int energyUsageRate) {
         super(location, energyUsageRate);
-        energyThreshold = 20;
+        energyThreshold = Constants.FUEL_CAR_ENERGY_THRESHOLD;
     }
 }

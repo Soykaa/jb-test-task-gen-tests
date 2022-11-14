@@ -19,7 +19,6 @@ Adding keywords (final, static) in places where necessary
 
 ## Time, time, time: TODO
 
-- add .gitignore
 - bring out the magic constants
 - add checks
 - check the overall logic (this requires more time, and I don't have enough of it)

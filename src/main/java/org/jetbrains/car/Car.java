@@ -1,18 +1,24 @@
 package org.jetbrains.car;
 
 import org.jetbrains.location.Location;
+import org.jetbrains.util.Constants;
 
 public abstract class Car {
     protected Location location;
     private final Energy energy;
     private final double energyUsageRate;
-    protected int energyThreshold;
+    protected double energyThreshold;
 
-    public Car(Location location, double energyUsageRate) {
+    public Car(Location location, int energyUsageRate) {
         this.location = location;
 
-        if (energyUsageRate <= 0) {
-            throw new IllegalArgumentException("energy usage rate should be higher than 0.");
+        if (energyUsageRate <= Constants.MINIMUM_ENERGY) {
+            throw new IllegalArgumentException("energy usage rate should be higher than "
+                    + Constants.MINIMUM_ENERGY + ".");
+        }
+        if (energyUsageRate >= Constants.MAXIMUM_ENERGY) {
+            throw new IllegalArgumentException("energy usage rate should be lower than "
+                    + Constants.MAXIMUM_ENERGY + ".");
         }
         this.energyUsageRate = energyUsageRate;
         energy = new Energy();
@@ -31,7 +37,7 @@ public abstract class Car {
     }
 
     public void refuel() {
-        System.out.println("Refueling");
+        System.out.println(Constants.REFUELING_STATUS);
         this.energy.recharge();
     }
 
@@ -47,7 +53,7 @@ public abstract class Car {
         private double energy;
 
         public Energy() {
-            energy = 100;
+            energy = Constants.MAXIMUM_ENERGY;
         }
 
         public void reduceEnergy(double value) {
@@ -59,7 +65,7 @@ public abstract class Car {
         }
 
         public void recharge() {
-            energy = 100;
+            energy = Constants.MAXIMUM_ENERGY;
         }
     }
 }
