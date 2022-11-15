@@ -1,8 +1,6 @@
 package org.jetbrains.station;
 
 import org.jetbrains.car.Car;
-import org.jetbrains.car.ElectricCar;
-import org.jetbrains.car.PetrolCar;
 import org.jetbrains.location.Location;
 import org.jetbrains.util.Constants;
 
@@ -41,16 +39,10 @@ public class StationsPool {
     }
 
     public ChargingStation getClosestChargingStation(Car car) {
-        if (!(car instanceof PetrolCar)) {
-            throw new IllegalArgumentException(Constants.PETROL_CARS_ONLY_MSG);
-        }
         return (ChargingStation) getClosestStation(car, this.chargingStations);
     }
 
     public GasStation getClosestGasStation(Car car) {
-        if (!(car instanceof ElectricCar)) {
-            throw new IllegalArgumentException(Constants.ELECTRIC_CARS_ONLY_MSG);
-        }
         return (GasStation) getClosestStation(car, this.gasStations);
     }
 

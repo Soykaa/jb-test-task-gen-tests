@@ -21,8 +21,6 @@ into 2 different asserts to make sure that the problem was exactly in exceeding 
   already going)
 - Since the action takes place in a 2D world, it makes sense that the coordinates should be two-dimensional
 - In `addEnergy()` fueling should be before driving
-- Add checks to `getClosestChargingStation` and `getClosestGasStation` - because each type of the car should have its
-  own station
 
 4. Other stuff.
 
@@ -33,8 +31,8 @@ into 2 different asserts to make sure that the problem was exactly in exceeding 
 
 ## Time, time, time: TODO
 
-- add (more) value checks
-- check the overall logic (this requires more time, and I don't have enough of it) and improve it
+- check the overall logic (big methods especially; this requires more time, and I don't have enough of it) and improve
+  it
 - cover the unit with tests - at least 2-3 per method (I wish I had a bit more time..)
 - write larger tests (for example, integration tests, which will have time)
 - additional refactoring (if necessary)
