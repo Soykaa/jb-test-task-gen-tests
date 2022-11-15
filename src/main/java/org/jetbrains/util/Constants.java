@@ -19,4 +19,5 @@ public class Constants {
     public static final String CURRENT_LOCATION_MSG = ". Current location ";
     public static final String CURRENT_ENERGY_MSG = ". Energy ";
     public static final String CURRENT_DEST_MSG = "Drive to ";
+    public static final String NOT_ENOUGH_ENERGY_MSG = "Not enough energy";
 }

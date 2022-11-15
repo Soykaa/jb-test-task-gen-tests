@@ -56,10 +56,13 @@ public class Person {
             GasStation gasStation = StationsPool.getInstance().getClosestGasStation(car);
             destination = gasStation.getLocation();
         }
-        car.refuel();
+        if (car.needsEnergy(destination)) {
+            throw new IllegalStateException(Constants.NOT_ENOUGH_ENERGY_MSG);
+        }
         System.out.println(Constants.CURRENT_DEST_MSG + destination +
                 Constants.CURRENT_LOCATION_MSG + car.getLocation() +
                 Constants.CURRENT_ENERGY_MSG + car.getEnergyValue());
+        car.refuel();
         car.driveTo(destination);
     }
 

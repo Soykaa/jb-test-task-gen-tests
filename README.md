@@ -21,6 +21,7 @@ into 2 different asserts to make sure that the problem was exactly in exceeding 
   already going)
 - Since the action takes place in a 2D world, it makes sense that the coordinates should be two-dimensional
 - In `addEnergy()` fueling should be before driving
+- In `addEnergy()` can be situation, when person won't have an opportunity to drive to the station
 
 4. Other stuff.
 
@@ -36,4 +37,4 @@ into 2 different asserts to make sure that the problem was exactly in exceeding 
 - cover the unit with tests - at least 2-3 per method (I wish I had a bit more time..)
 - write larger tests (for example, integration tests, which will have time)
 - additional refactoring (if necessary)
-- Bonus: Javadoc would definitely make everyone's life easier...
+- Bonuses: 1) Javadoc would definitely make everyone's life easier... 2) Custom Exceptions?
