@@ -1,10 +1,10 @@
 package org.jetbrains.util;
 
 public class Constants {
-    public static final int MINIMUM_ENERGY = 0;
-    public static final int MAXIMUM_ENERGY = 100;
-    public static final int ELECTRIC_CAR_ENERGY_THRESHOLD = 40;
-    public static final int FUEL_CAR_ENERGY_THRESHOLD = 20;
+    public static final double MINIMUM_ENERGY = 0;
+    public static final double MAXIMUM_ENERGY = 100;
+    public static final double ELECTRIC_CAR_ENERGY_THRESHOLD = 40;
+    public static final double FUEL_CAR_ENERGY_THRESHOLD = 20;
     public static final int MIN_DRIVE_AGE = 18;
     public static final double MAX_DISTANCE = 100;
 

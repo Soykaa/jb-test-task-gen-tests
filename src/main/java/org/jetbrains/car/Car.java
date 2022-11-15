@@ -9,7 +9,7 @@ public abstract class Car {
     private final double energyUsageRate;
     protected double energyThreshold;
 
-    public Car(Location location, int energyUsageRate) {
+    public Car(Location location, double energyUsageRate) {
         this.location = location;
 
         if (energyUsageRate <= Constants.MINIMUM_ENERGY) {
@@ -27,7 +27,7 @@ public abstract class Car {
     public boolean needsEnergy(Location destination) {
         double distance = this.location.countDistanceTo(destination);
         double estimatedUsage = distance * energyUsageRate;
-        return (this.energy.getEnergy() - estimatedUsage <= this.energyThreshold);
+        return this.energy.getEnergy() - estimatedUsage <= this.energyThreshold;
     }
 
     public void driveTo(Location destination) {
@@ -46,7 +46,7 @@ public abstract class Car {
     }
 
     public double getEnergyValue() {
-        return (this.energy.getEnergy());
+        return this.energy.getEnergy();
     }
 
     protected static class Energy {
