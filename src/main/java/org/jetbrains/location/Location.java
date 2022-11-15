@@ -12,4 +12,8 @@ public class Location {
     public double countDistanceTo(Location destination) {
         return Math.sqrt((x - destination.x) * (x - destination.x) + (y - destination.y) * (y - destination.y));
     }
+
+    public String to_str() {
+        return "(" + x + ", " + y + ")";
+    }
 }

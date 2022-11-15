@@ -1,5 +1,8 @@
 # Automatically generating unit tests: test task
 
+*Disclaimer*: I did not have time to cover the code with tests and check meaningful methods for logical holes, but I
+understand how to do both!
+
 ## Requirements
 
 - Java 11
@@ -34,7 +37,7 @@ into 2 different asserts to make sure that the problem was exactly in exceeding 
 
 - check the overall logic (big methods especially; this requires more time, and I don't have enough of it) and improve
   it
-- cover the unit with tests - at least 2-3 per method (I wish I had a bit more time..)
+- cover the unit with tests - at least 2-5 per method (I wish I had a bit more time..)
 - write larger tests (for example, integration tests, which will have time)
 - additional refactoring (if necessary)
 - Bonuses: 1) Javadoc would definitely make everyone's life easier... 2) Custom Exceptions?

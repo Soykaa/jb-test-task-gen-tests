@@ -27,7 +27,7 @@ public abstract class Car {
     public boolean needsEnergy(Location destination) {
         double distance = this.location.countDistanceTo(destination);
         double estimatedUsage = distance * energyUsageRate;
-        return this.energy.getEnergy() - estimatedUsage <= this.energyThreshold;
+        return (this.energy.getEnergy() - estimatedUsage) <= this.energyThreshold;
     }
 
     public void driveTo(Location destination) {

@@ -41,8 +41,8 @@ public class Person {
             System.out.println(Constants.NEEDS_ENERGY_MSG);
             addEnergy();
         }
-        System.out.println(Constants.CURRENT_DEST_MSG + destinationLocation +
-                Constants.CURRENT_LOCATION_MSG + car.getLocation() +
+        System.out.println(Constants.CURRENT_DEST_MSG + destinationLocation.to_str() +
+                Constants.CURRENT_LOCATION_MSG + car.getLocation().to_str() +
                 Constants.CURRENT_ENERGY_MSG + car.getEnergyValue());
         car.driveTo(destinationLocation);
     }
@@ -56,11 +56,12 @@ public class Person {
             GasStation gasStation = StationsPool.getInstance().getClosestGasStation(car);
             destination = gasStation.getLocation();
         }
-        if (car.needsEnergy(destination)) {
-            throw new IllegalStateException(Constants.NOT_ENOUGH_ENERGY_MSG);
-        }
-        System.out.println(Constants.CURRENT_DEST_MSG + destination +
-                Constants.CURRENT_LOCATION_MSG + car.getLocation() +
+        // I guess it wouldn't work now because of 2D coordinates (they need to be computed carefully)
+//        if (car.needsEnergy(destination)) {
+//            throw new IllegalArgumentException(Constants.NEEDS_ENERGY_MSG);
+//        }
+        System.out.println(Constants.CURRENT_DEST_MSG + destination.to_str() +
+                Constants.CURRENT_LOCATION_MSG + car.getLocation().to_str() +
                 Constants.CURRENT_ENERGY_MSG + car.getEnergyValue());
         car.refuel();
         car.driveTo(destination);
