@@ -13,11 +13,11 @@ public abstract class Car {
         this.location = location;
 
         if (energyUsageRate <= Constants.MINIMUM_ENERGY) {
-            throw new IllegalArgumentException("energy usage rate should be higher than "
+            throw new IllegalArgumentException(Constants.TOO_lOW_ENERGY_USAGE_RATE_MSG
                     + Constants.MINIMUM_ENERGY + ".");
         }
         if (energyUsageRate >= Constants.MAXIMUM_ENERGY) {
-            throw new IllegalArgumentException("energy usage rate should be lower than "
+            throw new IllegalArgumentException(Constants.TOO_HIGH_ENERGY_USAGE_RATE_MSG
                     + Constants.MAXIMUM_ENERGY + ".");
         }
         this.energyUsageRate = energyUsageRate;
